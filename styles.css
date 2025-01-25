@@ -1,35 +1,40 @@
 /* style.css */
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern font */
     margin: 0;
-    line-height: 1.6;
-    color: #333; /* Dark gray text for better contrast */
-    background-color: #f4f4f4; /* Light gray background */
+    line-height: 1.7;
+    color: #333;
+    background: #f9f9f9; /* Off-white background */
+    -webkit-font-smoothing: antialiased; /* for font smoothing */
+}
+
+/* Container for consistent spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
-    background-color: #333; /* Dark gray header */
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed; /* Fixed header */
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed;
     width: 100%;
-    z-index: 100; /* Ensure header stays on top */
+    z-index: 100;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
     text-decoration: none;
-    color: white;
+    color: #333;
 }
 
 nav ul {
@@ -40,98 +45,124 @@ nav ul {
 }
 
 nav li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
-    padding: 5px;
+    color: #555;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
+nav a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+/* Hero Section */
 #hero {
-    background-image: url('hero-image.jpg'); /* Replace with your hero image */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    background: #f0f0f0; /* Very light gray background */
+    padding: 150px 0;
     text-align: center;
-    padding: 100px 0;
-    margin-top: 60px; /* Adjust margin to account for fixed header */
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    background-color: #333;
+    background: #007bff; /* Primary color */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-#about, #projects, #contact {
-    padding: 40px 0;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.btn:hover {
+    background: #0056b3; /* Darker shade on hover */
+}
+
+/* About Section */
+#about {
+    padding: 80px 0;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 .profile-pic {
-    width: 200px;
-    border-radius: 50%;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1; /* Takes up remaining space */
+}
+
+/* Projects Section */
+#projects {
+    background: #fff;
+    padding: 80px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05); /* subtle shadow on the top */
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 .project {
-    border: 1px solid #ddd;
-    padding: 20px;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden; /* Prevents image overflow */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .project img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    display: block; /* Prevents image from adding extra space below */
-    margin-bottom: 10px;
+    display: block;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
+.project h3, .project p {
+  padding: 0 20px;
+}
+
+.project-link {
+    display: block;
+    padding: 15px 0;
     text-align: center;
-    padding: 1rem 0;
+    background: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-/* Basic Form Styling */
-form input, form textarea {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+.project-link:hover {
+  background-color: #e1e1e1;
 }
 
-form button {
-  @extend .btn;
-  border: none;
-  cursor: pointer;
+/* Contact Section */
+#contact {
+    padding: 80px 0;
+    background: #f9f9f9;
 }

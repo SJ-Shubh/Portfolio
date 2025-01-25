@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Modern Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">My Portfolio</a>
+            <a href="#" class="logo">Your Name</a>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -20,52 +25,67 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I'm a passionate developer showcasing my work.</p>
+            <h1>Creative Developer & Designer</h1>
+            <p>Crafting beautiful and functional web experiences.</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-          <img src="placeholder-profile.jpg" alt="Profile Picture" class="profile-pic">
-          <p>A brief and engaging introduction about yourself, your skills, and what you're passionate about. You can talk about your experience, your goals, and what makes you unique. This is your chance to make a strong first impression.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="about-text">
+                    <p>I'm a passionate web developer and designer with a focus on creating clean, user-friendly, and
+                        effective websites. I have experience in front-end and back-end development, and I'm always
+                        eager to learn new technologies. I'm driven by a desire to create digital experiences that are
+                        both visually appealing and highly functional.</p>
+                    <p>I'm proficient in HTML, CSS, JavaScript, and various other web technologies. I enjoy
+                        collaborating with clients to bring their visions to life, and I'm committed to delivering
+                        high-quality work that exceeds expectations.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project">
-                <img src="placeholder-project.jpg" alt="Project 1">
-                <h3>Project Title 1</h3>
-                <p>Short description of project 1.</p>
-                <a href="#" target="_blank">View Project</a>
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                    <a href="#" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Brief description of the project.</p>
+                    <a href="#" target="_blank" class="project-link">View Project</a>
+                </div>
             </div>
-            <div class="project">
-                <img src="placeholder-project.jpg" alt="Project 2">
-                <h3>Project Title 2</h3>
-                <p>Short description of project 2.</p>
-                <a href="#" target="_blank">View Project</a>
-            </div>
-            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 My Portfolio</p>
+        <p>&copy; 2023 Your Name</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
