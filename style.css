@@ -1,92 +1,125 @@
 /* style.css */
+body {
+    font-family: 'Roboto', sans-serif; /* Primary font */
+    margin: 0;
+    line-height: 1.7;
+    color: #333;
+    background: #fff; /* Clean white background */
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* Prevent horizontal scrollbar on some hover effects */
+}
+
 /* ... (Existing CSS from previous response) */
 
-/* Hero Section Social Icons */
-.social-icons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Headings font */
+    font-weight: 600;
+    color: #222;
 }
 
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-    border-radius: 50%;
-    margin: 0 10px;
-    color: white;
-    font-size: 1.2rem;
-    transition: background 0.3s ease;
+/* Hero Section */
+#hero {
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background */
+    padding: 180px 0 150px; /* Increased padding */
+    text-align: center;
+    color: #333; /* Darker text for contrast */
 }
 
-.social-icons a:hover {
-    background: white;
-    color: #007bff;
+.hero-content h1 {
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 25px;
 }
 
-/* Project Info Overlay */
+.hero-content p {
+    font-size: 1.3rem; /* Slightly larger paragraph */
+    max-width: 800px;
+    margin: 0 auto 30px; /* Center the paragraph */
+}
+
+/* About Section */
+#about {
+    padding: 100px 0; /* Increased padding */
+}
+
+.about-content {
+    gap: 80px; /* Increased gap */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.profile-pic {
+    width: 350px; /* Larger image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Projects Section */
+#projects {
+    background: #f8f8f8; /* Very light gray background */
+    padding: 100px 0;
+}
+
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Larger project cards */
+    gap: 40px;
+}
+
 .project {
-    position: relative; /* Needed for absolute positioning of overlay */
-    overflow: hidden;
-}
-
-.project img {
-    transition: transform 0.5s ease; /* Smooth image scaling */
-}
-
-.project:hover img {
-    transform: scale(1.1); /* Scale up image on hover */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .project-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    color: white;
-    padding: 20px;
-    transform: translateY(100%); /* Initially hidden below */
-    transition: transform 0.3s ease;
+    padding: 30px; /* Increased padding in overlay */
 }
 
-.project:hover .project-info {
-    transform: translateY(0); /* Slide up on hover */
+.project-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
-.project-info h3, .project-info p {
-    margin-bottom: 10px;
+.project-info p {
+    font-size: 1.1rem;
 }
 
-/* Footer Container */
+/* Contact Section */
+#contact {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #cfdef3, #e0eafc); /* Gradient background */
+}
+
+form input, form textarea {
+    padding: 15px;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #eee;
+    padding: 30px 0;
+}
+
 footer .container {
-    padding: 20px;
+    text-align: center;
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
+/* Media Queries (Improved) */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
     .about-content {
-        flex-direction: column; /* Stack on smaller screens */
-        text-align: center; /* Center text */
-    }
-
-    .profile-pic {
-        margin-bottom: 30px;
-    }
-
-    nav ul {
         flex-direction: column;
         text-align: center;
     }
 
-    nav li {
-        margin: 10px 0;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
+    .profile-pic {
+        margin-bottom: 50px;
     }
 }
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-
