@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -28,6 +31,10 @@
             <h1>Creative Developer & Designer</h1>
             <p>Crafting beautiful and functional web experiences.</p>
             <a href="#projects" class="btn">View My Work</a>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
 
@@ -55,16 +62,21 @@
             <div class="projects-grid">
                 <div class="project">
                     <img src="images/project1.jpg" alt="Project 1">
-                    <h3>Project Title 1</h3>
-                    <p>Brief description of the project.</p>
-                    <a href="#" target="_blank" class="project-link">View Project</a>
+                    <div class="project-info">
+                        <h3>Project Title 1</h3>
+                        <p>Brief description of the project. This is a longer description to show how it wraps.</p>
+                        <a href="#" target="_blank" class="project-link">View Project</a>
+                    </div>
                 </div>
                 <div class="project">
                     <img src="images/project2.jpg" alt="Project 2">
-                    <h3>Project Title 2</h3>
-                    <p>Brief description of the project.</p>
-                    <a href="#" target="_blank" class="project-link">View Project</a>
+                    <div class="project-info">
+                        <h3>Project Title 2</h3>
+                        <p>Brief description of the project.</p>
+                        <a href="#" target="_blank" class="project-link">View Project</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -82,7 +94,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 Your Name</p>
+        <div class="container">
+            <p>&copy; 2023 Your Name</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
