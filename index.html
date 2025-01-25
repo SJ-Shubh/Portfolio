@@ -3,172 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Magic Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            width: 90%;
-            max-width: 450px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: -webkit-linear-gradient(#f3ec78, #af4261);
-            background: linear-gradient(#f3ec78, #af4261);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            animation: slideIn 1.5s ease-in-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        button {
-            background: #ff7eb3;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-        }
-
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(255, 126, 179, 0.5);
-            background: #ff4e8a;
-        }
-
-        .bubble {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            animation: float 5s infinite ease-in-out;
-            opacity: 0.6;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-20px) scale(1.1);
-            }
-            100% {
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .bubble:hover {
-            animation: pop 0.3s ease-in-out;
-        }
-
-        @keyframes pop {
-            0% {
-                transform: scale(1);
-                opacity: 0.6;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-    </style>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the Magic Zone</h1>
-        <p id="message">Click the button below to reveal your magical fortune!</p>
-        <button onclick="showMessage()">Discover Magic</button>
-    </div>
+    <header>
+        <nav>
+            <a href="#" class="logo">My Portfolio</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 20%; animation-duration: 4s;"></div>
-    <div class="bubble" style="width: 150px; height: 150px; top: 30%; left: 70%; animation-duration: 6s;"></div>
-    <div class="bubble" style="width: 80px; height: 80px; top: 60%; left: 40%; animation-duration: 5s;"></div>
-    <div class="bubble" style="width: 120px; height: 120px; top: 50%; left: 10%; animation-duration: 7s;"></div>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate developer showcasing my work.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
 
-    <script>
-        function showMessage() {
-            const messageElement = document.getElementById('message');
-            const messages = [
-                "You are destined for greatness! 🌟",
-                "Adventure is calling you! 🌍",
-                "Believe in your magic! ✨",
-                "Today is your day to shine! 🌞",
-                "Happiness is just around the corner! 🌈"
-            ];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            messageElement.textContent = randomMessage;
-            animateText(messageElement);
-        }
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="placeholder-profile.jpg" alt="Profile Picture" class="profile-pic">
+          <p>A brief and engaging introduction about yourself, your skills, and what you're passionate about. You can talk about your experience, your goals, and what makes you unique. This is your chance to make a strong first impression.</p>
+        </div>
+    </section>
 
-        function animateText(element) {
-            element.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-            element.style.transform = "scale(1.2)";
-            element.style.opacity = "0.8";
-            setTimeout(() => {
-                element.style.transform = "scale(1)";
-                element.style.opacity = "1";
-            }, 300);
-        }
-    </script>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <img src="placeholder-project.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>Short description of project 1.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="project">
+                <img src="placeholder-project.jpg" alt="Project 2">
+                <h3>Project Title 2</h3>
+                <p>Short description of project 2.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
