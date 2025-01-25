@@ -3,62 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Page</title>
+    <title>Interactive Magic Page</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #f3ec78, #af4261);
-            color: #333;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            overflow: hidden;
         }
 
         .container {
             text-align: center;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(#f3ec78, #af4261);
+            background: linear-gradient(#f3ec78, #af4261);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         button {
-            margin-top: 20px;
-            background: #af4261;
+            background: #ff7eb3;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         button:hover {
-            background: #f3ec78;
-            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 126, 179, 0.5);
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Interactive Page</h1>
-        <p id="message">Click the button below to see some magic!</p>
-        <button onclick="showMessage()">Click Me</button>
+        <h1>Welcome to the Magic Zone</h1>
+        <p id="message">Click the button below to reveal your magical fortune!</p>
+        <button onclick="showMessage()">Discover Magic</button>
     </div>
+
+    <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 20%; animation-duration: 4s;"></div>
+    <div class="bubble" style="width: 150px; height: 150px; top: 30%; left: 70%; animation-duration: 6s;"></div>
+    <div class="bubble" style="width: 80px; height: 80px; top: 60%; left: 40%; animation-duration: 5s;"></div>
 
     <script>
         function showMessage() {
             const messageElement = document.getElementById('message');
             const messages = [
-                "Have a great day! 😊",
-                "Keep up the awesome work! 🚀",
-                "You're doing amazing! 🌟",
-                "Never stop learning! 📚"
+                "You are destined for greatness! 🌟",
+                "Adventure is calling you! 🌍",
+                "Believe in your magic! ✨",
+                "Today is your day to shine! 🌞",
+                "Happiness is just around the corner! 🌈"
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             messageElement.textContent = randomMessage;
